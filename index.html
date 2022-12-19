@@ -119,41 +119,41 @@
 
 <html>
 <head>
-	<title>MIDMs: Matching Interleaved Diffusion Models for Exemplar-based Image Translation</title>
-	<meta property="og:image" content="https://KU-CVLAB.github.io/MIDMs"/>
-	<meta property="og:title" content=MIDMs: Matching Interleaved Diffusion Models for Exemplar-based Image Translation" />
+	<title>ExtremeNeRF: Few-shot Neural Radiance Fields Under Varying Illumination</title>
+	<meta property="og:image" content="https://seokyeong94.github.io/ExtremeNeRF"/>
+	<meta property="og:title" content=ExtremeNeRF: Few-shot Neural Radiance Fields Under Varying Illumination" />
 </head>
 
 <body>
 	<br>
 	<center>
-		<span style="font-size:36px">MIDMs: Matching Interleaved Diffusion Models <br>for Exemplar-based Image Translation<br>AAAI'23</span>
+		<span style="font-size:36px">ExtremeNeRF: Few-shot Neural Radiance Fields Under Varying Illumination</span>
 		<table align=center width=1100px>
 			<table align=center width=1100px>
 				<tr>
 					<td align=center width=180px>
 						<center>
-							<span style="font-size:24px"><a href="https://j0seo.github.io/">Junyoung Seo<sup>*1</sup></a></span>
+							<span style="font-size:24px">Seokyeong Lee<sup>1,2</sup></a></span>
 						</center>
 					</td>
 					<td align=center width=220px>
 						<center>
-							<span style="font-size:24px"><a href="https://scholar.google.com/citations?user=O6B36wwAAAAJ&hl=ko&oi=sra">Gyuseong Lee<sup>*1</sup></a></span>
+							<span style="font-size:24px">Junyong Choi<sup>1,2</sup></a></span>
 						</center>
 					</td>
 					<td align=center width=200px>
 						<center>
-							<span style="font-size:24px"><a href="https://seokju-cho.github.io/">Seokju Cho<sup>1</sup></a></span>
+							<span style="font-size:24px">Seungryong Kim<sup>2</sup></a></span>
 						</center>
 					</td>
 					<td align=center width=180px>
 						<center>
-							<span style="font-size:24px"><a href="https://lee-jiyoung.github.io/">Jiyoung Lee<sup>2</sup></a></span>
+							<span style="font-size:24px">Ig-Jae Kim<sup>1</sup></a></span>
 						</center>
 					</td>
 					<td align=center width=250px>
 						<center>
-							<span style="font-size:24px"><a href="https://cvlab.korea.ac.kr/members">Seungryong Kim<sup>1</sup></a></span>
+							<span style="font-size:24px">Junghyun Cho<sup>1</sup></a></span>
 						</center>
 					</td>
 				</tr>
@@ -163,22 +163,15 @@
 				<tr>
 					<td align=center width=150px>
 						<center>
-							<span style="font-size:24px">Korea University<sup>1</sup></a></span>
+							<span style="font-size:24px">Korea Institute of Science and Technology<sup>1</sup></a></span>
 						</center>
 					</td>
 			
 					<td align=center width=150px>
 						<center>
-							<span style="font-size:24px">NAVER AI Lab<sup>2</sup></a></span>
+							<span style="font-size:24px">Korea University<sup>2</sup></a></span>
 						</center>
 					</td>
-
-					<td align=center width=150px>
-						<center>
-							<span style="font-size:24px">* Equal contribution</a></span>
-						</center>
-					</td>
-
 
 				</tr>
 			</table>
@@ -187,12 +180,12 @@
 				<tr>
 					<td align=center width=120px>
 						<center>
-							<span style="font-size:24px"><a href='https://arxiv.org/abs/2209.11047'>[Paper]</a></span>
+							<span style="font-size:24px"><a href=''>[Paper]</a></span>
 						</center>
 					</td>
 					<td align=center width=120px>
 						<center>
-							<span style="font-size:24px"><a href="https://github.com/KU-CVLAB/MIDMs/">[Code]</a></span><br>
+							<span style="font-size:24px"><a href="https://github.com/seokyeong94/ExtremeNeRF/">[Code]</a></span><br>
 						</center>
 					</td>
 				</tr>
@@ -206,7 +199,7 @@
 			<tr>
 				<td width=420px>
 					<center>
-						<img class="round" style="width:900px" src="./resources/midm_architecture.png"/>
+						<img class="round" style="width:900px" src="./resources/framework_final.pdf"/>
 					</center>
 				</td>
 			</tr>
@@ -214,8 +207,8 @@
 		<table align=center width=850px>
 			<tr>
 				<td>
-					MIDMs firstly propose to use diffusion models for exemplar-based image translation tasks, to address the limitations of existing methods. 
-					We present a diffusion-based matching-and-generation framework that interleaves cross-domain matching and diffusion steps to modify the diffusion trajectory toward a more faithful image translation.
+					In this paper, we take a step further and design a method that can synthesize a novel view image when only a small number of images taken under varying illuminations are given, extending NeRF's usage into extremely practical environments. 
+					Our proposed method can directly regularize the colors of the unknown view by extracting and enforcing consistency among intrinsic components, which should be independent of viewing direction.
 				</td>
 			</tr>
 		</table>
@@ -227,12 +220,13 @@
 		<center><h1>Abstract</h1></center>
 		<tr>
 			<td>
-				We present a novel method for exemplar-based image translation, called matching interleaved diffusion models (MIDMs). Most existing methods for this task were formulated as GAN-based matching-then-generation 
-				framework. However, in this framework, matching errors induced by the difficulty of semantic matching across cross-domain, e.g., sketch and photo, can be easily propagated to the generation step, which in turn 
-				leads to the degenerated results. Motivated by the recent success of diffusion models, overcoming the shortcomings of GANs, we incorporate the diffusion models to overcome these limitations. Specifically, 
-				we formulate a diffusion-based matching-and-generation framework that interleaves cross-domain matching and diffusion steps in the latent space by iteratively feeding the intermediate warp into the 
-				noising process and denoising it to generate a translated image. In addition, to improve the reliability of diffusion process, we design confidence-aware process using cycle-consistency 
-				to consider only confident regions during translation. Experimental results show that our MIDMs generate more plausible images than state-of-the-art methods.
+				Neural radiance fields (NeRF) have been widely studied for novel view synthesis. 
+			        However, NeRF has a well-known limitation in that it only shows promising performance if a massive amount of multi-view images taken under consistent illuminations are provided. 
+				Reducing the number of required inputs and loosening the restricted lighting assumption are both necessarily needed for the practical usage of NeRF. 
+				In this paper, we take a step further and design ExtremeNeRF to synthesize a novel view image in an extremely practical environment where only a small number of multi-view images taken under varying illuminations are available. 
+				Specifically, by extracting intrinsic image components that should be shared among different views, our method enables direct color comparison between the input and novel view instead of interpolating colors between views like NeRF does. 
+				An additional depth consistency loss that enforces correct geometry synthesis is also proposed. 
+			        Our framework is evaluated with illumination-varying multi-view datasets including a newly built NeRF Extreme benchmark, which is a first in-the-wild NeRF benchmark that has both multiple viewing directions and varying-illuminations. 
 			</td>
 		</tr>
 	</table>
@@ -245,7 +239,7 @@
 		<tr>
 			<td align=center width=600px>
 				<center>
-					<td><img class="round" style="width:1100px" src="./resources/midm_architecture.png"/></td>
+					<td><img class="round" style="width:1100px" src="./resources/framework_pdf"/></td>
 				</center>
 			</td>
 		</tr>
@@ -271,7 +265,7 @@
 		<tr>
 			<td align=center width=600px>
 				<center>
-					<td><img class="round" style="width:800px" src="./resources/qual_celeb.png"/></td>
+					<td><img class="round" style="width:800px" src=""/></td>
 				</center>
 			</td>
 		</tr>
@@ -282,7 +276,7 @@
 		<tr>
 			<td align=center width=600px>
 				<center>
-					<td><img class="round" style="width:800px" src="./resources/qual_lsun.png"/></td>
+					<td><img class="round" style="width:800px" src=""/></td>
 				</center>
 			</td>
 		</tr>
@@ -296,8 +290,8 @@
 		<center><h1>Paper and Supplementary Material</h1></center>
 		<tr>
 			<td><a href="https://arxiv.org/abs/2209.11047"><img class="layered-paper-big" style="height:175px" src="./resources/paper_midm.png"/></a></td>
-			<td><span style="font-size:14pt">J. Seo*, G. Lee*, S. Cho, <br>J. Lee, S. Kim<br>
-				<b>MIDMs: Matching Interleaved Diffusion Models for Exemplar-based Image Translation.</b><br>
+			<td><span style="font-size:14pt">S. Lee, J. Choi, <br>S. Kim, I. Kim, J. Cho<br>
+				<b>ExtremeNeRF: Few-shot Neural Radiance Fields Under Varying Illumination.</b><br>
 
 				<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
 				<span style="font-size:4pt"><a href=""><br></a>
